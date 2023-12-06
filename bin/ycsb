@@ -196,6 +196,7 @@ def get_ycsb_home():
     dir = os.path.abspath(os.path.dirname(sys.argv[0]))
     while "LICENSE.txt" not in os.listdir(dir):
         dir = os.path.join(dir, os.path.pardir)
+    print("get_ycsb_home ", dir)
     return os.path.abspath(dir)
 
 def is_distribution():
