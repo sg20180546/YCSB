@@ -200,8 +200,11 @@ def get_ycsb_home():
     return os.path.abspath(dir)
 
 def is_distribution():
+    ret="pom.xml" not in os.listdir(get_ycsb_home())
+    print(ret)
+    return ret
     # If there's a top level pom, we're a source checkout. otherwise a dist artifact
-    return "pom.xml" not in os.listdir(get_ycsb_home())
+    # return "pom.xml" not in os.listdir(get_ycsb_home())
 
 # Run the maven dependency plugin to get the local jar paths.
 # presumes maven can run, so should only be run on source checkouts
